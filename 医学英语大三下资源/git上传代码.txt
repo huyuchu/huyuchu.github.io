@@ -1,9 +1,0 @@
-git init （初始化仓库）
-
-git add . (这里的.表示添加所有文件，也可以自定义添加）
-
-git commit -m ‘添加的注释信息’
-
-git remote add origin ‘url’
-
-git push -u origin master
