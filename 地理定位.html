@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .latlog {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: larger;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="latlog">
+    <p class="lat"></p>
+    <p class="lon"></p>
+  </div>
+
+  <script>
+    var p_lat = document.querySelector(".lat")
+    var p_lon = document.querySelector(".lon")
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var lat_txt = '纬度：' + position.coords.latitude
+        var lon_txt = '经度：' + position.coords.longitude
+        console.log('纬度：' + position.coords.latitude);
+        console.log('经度：' + position.coords.longitude);
+        p_lat.innerHTML = lat_txt
+        p_lon.innerHTML = lon_txt
+      });
+    } else {
+      console.log('地理定位不支持');
+      alert('地理定位不支持');
+    }
+  </script>
+</body>
+
+</html>
