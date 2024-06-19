@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body,
+        #container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .amap-marker-label {
+            border: 0;
+
+        }
+
+        .info {
+            position: relative;
+            top: 0;
+            right: 0;
+            min-width: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+
+    <script type="text/javascript" src="https://cache.amap.com/lbs/static/addToolbar.js"></script>
+    <script src="https://webapi.amap.com/js/marker.js"></script>
+    <script type="text/javascript"
+        src="https://webapi.amap.com/maps?v=1.4.15&key=ff230516783cd4dfa06cfb0b1d45e89a"></script>
+    <script>
+        var map = new AMap.Map("container", {
+            resizeEnable: true,
+            center: [113.612254, 34.750327],
+            zoom: 15
+        });
+        var shuju = [
+            {
+                name: "温迪雅",
+                num: 1,
+                stuID: "20195183902",
+                lonlat: [113.617006, 34.748067],
+                position: "河南省郑州市中原区文化宫路新乡医学院三全学院郑州中心医院教学基地",
+                tel: "15836001075",
+                qq: "",
+            },
+            {
+                name: "上官浩楠",
+                num: 2,
+                stuID: "20195329733",
+                lonlat: [113.611171, 34.750035],
+                position: "河南省郑州市中原区协作路1号院4号楼1单元12号",
+                tel: "16603985581",
+                qq: "",
+            },
+            {
+                name: "王萧",
+                num: 3,
+                stuID: "20195426812",
+                lonlat: [113.610829, 34.749824],
+                position: "河南省郑州市中原区协作路6号院1号楼五楼西户",
+                tel: "18736859639",
+                qq: "",
+            },
+            {
+                name: "安佳琪",
+                num: 4,
+                stuID: "20195426837",
+                lonlat: [113.611171, 34.750035],
+                position: "河南省郑州市中原区协作路1号院4号楼1单元12号",
+                tel: "15138015532",
+                qq: "",
+            },
+            {
+                name: "徐若愚",
+                num: 5,
+                stuID: "20195437020",
+                lonlat: [113.606285, 34.782309],
+                position: "郑州市中原区桐柏路街道正商明钻二期三单元16楼中户",
+                tel: "18736715038",
+                qq: "",
+            },
+            {
+                name: "库佑卓",
+                num: 6,
+                stuID: "20205110501",
+                lonlat: [113.609751, 34.749831],
+                position: "河南省郑州市中原区前进路16号院2单元702",
+                tel: "13613906225",
+                qq: "",
+            },
+            {
+                name: "郑路遥",
+                num: 7,
+                stuID: "20205110502",
+                lonlat: [113.602621, 34.744645],
+                position: "河南省郑州市中原区万达广场东区一单元2号楼3209",
+                tel: "15896902184",
+                qq: "",
+            },
+            {
+                name: "王志瑶",
+                num: 8,
+                stuID: "20205110503",
+                lonlat: [113.609751, 34.749831],
+                position: "河南省郑州市中原区前进路16号院2单元702",
+                tel: "15037368010",
+                qq: "",
+            },
+            {
+                name: "王梦娇",
+                num: 9,
+                stuID: "20205110504",
+                lonlat: [113.610139, 34.751417],
+                position: "河南省郑州市中原区协作路17号院一单元6楼中户 ",
+                tel: "18237303273",
+                qq: "",
+            },
+            {
+                name: "高源",
+                num: 10,
+                stuID: "20205110505",
+                lonlat: [113.617006, 34.748067],
+                position: "新乡医学院三全学院郑州市中心医院教学基地608宿舍",
+                tel: "17838778676",
+                qq: "",
+            },
+            {
+                name: "王靖",
+                num: 11,
+                stuID: "20205110507",
+                lonlat: [113.617006, 34.748067],
+                position: "河南省郑州市中原区文化宫路新乡医学院三全学院郑州中心医院教学基地",
+                tel: "13673508592",
+                qq: "",
+            },
+            {
+                name: "岳源",
+                num: 12,
+                stuID: "20205110508",
+                lonlat: [113.607445, 34.730503],
+                position: "河南省郑州市中原区汝河路汝河小区五号楼二单元301",
+                tel: "13592093189",
+                qq: "",
+            },
+            {
+                name: "张雯倩",
+                num: 13,
+                stuID: "20205110511",
+                lonlat: [113.612409, 34.740386],
+                position: "河南省郑州市中原区颍河路52号院一号楼一单元203",
+                tel: "18937482837",
+                qq: "",
+            },
+            {
+                name: "张广镇",
+                num: 14,
+                stuID: "20205110512",
+                lonlat: [113.617006, 34.748067],
+                position: "新乡医学院三全学院郑州市中心医院教学基地504宿舍",
+                tel: "15136517358",
+                qq: "",
+            },
+            {
+                name: "郭静晔",
+                num: 15,
+                stuID: "20205110513",
+                lonlat: [113.610728, 34.75115],
+                position: "河南省郑州市中原区协作路18号院6单元4楼7户",
+                tel: "17613904591",
+                qq: "",
+            },
+            {
+                name: "黄博文",
+                num: 16,
+                stuID: "20205110514",
+                lonlat: [113.610774, 34.752841],
+                position: "郑州市中原区计划路9号院一单元三楼",
+                tel: "13271265922",
+                qq: "",
+            },
+            {
+                name: "李晨昊",
+                num: 17,
+                stuID: "20205110516",
+                lonlat: [113.61078, 34.748996],
+                position: "郑州市中原区桐柏路199号富田花园4号楼三单元三楼北 ",
+                tel: "15936593791",
+                qq: "",
+            },
+            {
+                name: "魏利祥",
+                num: 18,
+                stuID: "20205110517",
+                lonlat: [113.611171, 34.750035],
+                position: "郑州市中原区协作路一号院四号楼一单元 8 号",
+                tel: "18568516079",
+                qq: "",
+            },
+            {
+                name: "胡玉初",
+                num: 19,
+                stuID: "20205110518",
+                lonlat: [113.617006, 34.748067],
+                position: "河南省郑州市中原区文化宫路新乡医学院三全学院郑州中心医院教学基地310宿舍",
+                tel: "13460750385",
+                qq: "",
+            },
+            {
+                name: "石振邦",
+                num: 20,
+                stuID: "20205110520",
+                lonlat: [113.61079, 34.748997],
+                position: "郑州市中原区桐柏路199号富田花园4号楼三单元三楼北 ",
+                tel: "15518620250",
+                qq: "",
+            },
+            {
+                name: "侯凯峰",
+                num: 21,
+                stuID: "20205110521",
+                lonlat: [113.609795, 34.752025],
+                position: "河南省郑州市中原区前进路22号院4号楼5楼17户",
+                tel: "15038270593",
+                qq: "",
+            },
+            {
+                name: "贺梓昊",
+                num: 22,
+                stuID: "20205110522",
+                lonlat: [113.6399, 34.739312],
+                position: "郑州市二七区-桃源路45号院十号楼二单元三楼西户",
+                tel: "13803850695",
+                qq: "",
+            },
+            {
+                name: "薛海营",
+                num: 23,
+                stuID: "20205110523",
+                lonlat: [113.610774, 34.752841],
+                position: "郑州市中原区计划路社区9号院一单元三楼301",
+                tel: "15838287606",
+                qq: "",
+            },
+            {
+                name: "张帆",
+                num: 24,
+                stuID: "20205110524",
+                lonlat: [113.617006, 34.748067],
+                position: "河南省郑州市中原区新乡医学院三全学院郑州中心医院教学基地307",
+                tel: "17803976016",
+                qq: "",
+            },
+            {
+                name: "马怡飞",
+                num: 25,
+                stuID: "20205110525",
+                lonlat: [113.611171, 34.750035],
+                position: "河南省郑州市中原区协作路1号院4号楼1单元12号",
+                tel: "15137855267",
+                qq: "",
+            },
+            {
+                name: "刘明宇",
+                num: 26,
+                stuID: "20205110822",
+                lonlat: [113.611171, 34.750035],
+                position: "郑州市中原区协作路一号院四号楼一单元 8 号",
+                tel: "13639638667",
+                qq: "",
+            },
+            {
+                name: "夏彩丽",
+                num: 27,
+                stuID: "20205112104",
+                lonlat: [113.619965, 34.749347],
+                position: "河南省郑州市中原区互助路28号1单元8楼中户",
+                tel: "18439759867",
+                qq: "",
+            },
+        ];
+        var icon = new AMap.Icon({
+            size: new AMap.Size(20, 25),    // 图标尺寸
+            imageSize: new AMap.Size(20, 25),
+            image: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png',  // Icon的图像
+        });
+        var marker1 = new AMap.Marker({ position: shuju[0].lonlat, title: shuju[0].name, icon: icon, map: map, zIndex: 101, })
+        var marker2 = new AMap.Marker({ position: shuju[1].lonlat, title: shuju[1].name, icon: icon, map: map, zIndex: 101, })
+        var marker3 = new AMap.Marker({ position: shuju[2].lonlat, title: shuju[2].name, icon: icon, map: map, zIndex: 101, })
+        var marker4 = new AMap.Marker({ position: shuju[3].lonlat, title: shuju[3].name, icon: icon, map: map, zIndex: 101, })
+        var marker5 = new AMap.Marker({ position: shuju[4].lonlat, title: shuju[4].name, icon: icon, map: map, zIndex: 101, })
+        var marker6 = new AMap.Marker({ position: shuju[5].lonlat, title: shuju[5].name, icon: icon, map: map, zIndex: 101, })
+        var marker7 = new AMap.Marker({ position: shuju[6].lonlat, title: shuju[6].name, icon: icon, map: map, zIndex: 101, })
+        var marker8 = new AMap.Marker({ position: shuju[7].lonlat, title: shuju[7].name, icon: icon, map: map, zIndex: 101, })
+        var marker9 = new AMap.Marker({ position: shuju[8].lonlat, title: shuju[8].name, icon: icon, map: map, zIndex: 101, })
+        var marker10 = new AMap.Marker({ position: shuju[9].lonlat, title: shuju[9].name, icon: icon, map: map, zIndex: 101, })
+        var marker11 = new AMap.Marker({ position: shuju[10].lonlat, title: shuju[10].name, icon: icon, map: map, zIndex: 101, })
+        var marker12 = new AMap.Marker({ position: shuju[11].lonlat, title: shuju[11].name, icon: icon, map: map, zIndex: 101, })
+        var marker13 = new AMap.Marker({ position: shuju[12].lonlat, title: shuju[12].name, icon: icon, map: map, zIndex: 101, })
+        var marker14 = new AMap.Marker({ position: shuju[13].lonlat, title: shuju[13].name, icon: icon, map: map, zIndex: 101, })
+        var marker15 = new AMap.Marker({ position: shuju[14].lonlat, title: shuju[14].name, icon: icon, map: map, zIndex: 101, })
+        var marker16 = new AMap.Marker({ position: shuju[15].lonlat, title: shuju[15].name, icon: icon, map: map, zIndex: 101, })
+        var marker17 = new AMap.Marker({ position: shuju[16].lonlat, title: shuju[16].name, icon: icon, map: map, zIndex: 101, })
+        var marker18 = new AMap.Marker({ position: shuju[17].lonlat, title: shuju[17].name, icon: icon, map: map, zIndex: 101, })
+        var marker19 = new AMap.Marker({ position: shuju[18].lonlat, title: shuju[18].name, icon: icon, map: map, zIndex: 101, })
+        var marker20 = new AMap.Marker({ position: shuju[19].lonlat, title: shuju[19].name, icon: icon, map: map, zIndex: 101, })
+        var marker21 = new AMap.Marker({ position: shuju[20].lonlat, title: shuju[20].name, icon: icon, map: map, zIndex: 101, })
+        var marker22 = new AMap.Marker({ position: shuju[21].lonlat, title: shuju[21].name, icon: icon, map: map, zIndex: 101, })
+        var marker23 = new AMap.Marker({ position: shuju[22].lonlat, title: shuju[22].name, icon: icon, map: map, zIndex: 101, })
+        var marker24 = new AMap.Marker({ position: shuju[23].lonlat, title: shuju[23].name, icon: icon, map: map, zIndex: 101, })
+        var marker25 = new AMap.Marker({ position: shuju[24].lonlat, title: shuju[24].name, icon: icon, map: map, zIndex: 101, })
+        var marker26 = new AMap.Marker({ position: shuju[25].lonlat, title: shuju[25].name, icon: icon, map: map, zIndex: 101, })
+        var marker27 = new AMap.Marker({ position: shuju[26].lonlat, title: shuju[26].name, icon: icon, map: map, zIndex: 101, })
+        var markerlist = [marker1, marker2, marker3, marker4, marker5, marker6, marker7, marker8, marker9, marker10, marker11, marker12, marker13, marker14, marker15, marker16, marker17, marker18, marker19, marker20, marker21, marker22, marker23, marker24, marker25, marker26, marker27];
+        marker1.setLabel({
+            content: "<div class='info'>" + shuju[0].name + "<br>" + shuju[0].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker2.setLabel({
+            content: "<div class='info'>" + shuju[1].name + "<br>" + shuju[1].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker3.setLabel({
+            content: "<div class='info'>" + shuju[2].name + "<br>" + shuju[2].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker4.setLabel({
+            content: "<div class='info'>" + shuju[3].name + "<br>" + shuju[3].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker5.setLabel({
+            content: "<div class='info'>" + shuju[4].name + "<br>" + shuju[4].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker6.setLabel({
+            content: "<div class='info'>" + shuju[5].name + "<br>" + shuju[5].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker7.setLabel({
+            content: "<div class='info'>" + shuju[6].name + "<br>" + shuju[6].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker8.setLabel({
+            content: "<div class='info'>" + shuju[7].name + "<br>" + shuju[7].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker9.setLabel({
+            content: "<div class='info'>" + shuju[8].name + "<br>" + shuju[8].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker10.setLabel({
+            content: "<div class='info'>" + shuju[9].name + "<br>" + shuju[9].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker11.setLabel({
+            content: "<div class='info'>" + shuju[10].name + "<br>" + shuju[10].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker12.setLabel({
+            content: "<div class='info'>" + shuju[11].name + "<br>" + shuju[11].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker13.setLabel({
+            content: "<div class='info'>" + shuju[12].name + "<br>" + shuju[12].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker14.setLabel({
+            content: "<div class='info'>" + shuju[13].name + "<br>" + shuju[13].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker15.setLabel({
+            content: "<div class='info'>" + shuju[14].name + "<br>" + shuju[14].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker16.setLabel({
+            content: "<div class='info'>" + shuju[15].name + "<br>" + shuju[15].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker17.setLabel({
+            content: "<div class='info'>" + shuju[16].name + "<br>" + shuju[16].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker18.setLabel({
+            content: "<div class='info'>" + shuju[17].name + "<br>" + shuju[17].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker19.setLabel({
+            content: "<div class='info'>" + shuju[18].name + "<br>" + shuju[18].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker20.setLabel({
+            content: "<div class='info'>" + shuju[19].name + "<br>" + shuju[19].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker21.setLabel({
+            content: "<div class='info'>" + shuju[20].name + "<br>" + shuju[20].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker22.setLabel({
+            content: "<div class='info'>" + shuju[21].name + "<br>" + shuju[21].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker23.setLabel({
+            content: "<div class='info'>" + shuju[22].name + "<br>" + shuju[22].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker24.setLabel({
+            content: "<div class='info'>" + shuju[23].name + "<br>" + shuju[23].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker25.setLabel({
+            content: "<div class='info'>" + shuju[24].name + "<br>" + shuju[24].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker26.setLabel({
+            content: "<div class='info'>" + shuju[25].name + "<br>" + shuju[25].tel + "<br>" + "</div>",
+            direction: 'right',
+        })
+        marker27.setLabel({
+            content: "<div class='info'>" + shuju[26].name + "<br>" + shuju[26].tel + "<br>" + "</div>",
+            direction: 'right',
+        });
+        marker26.on('click', function () {
+            // 显示自定义信息
+            var infoWindow = new AMap.InfoWindow({
+                content: '刘明宇，上官浩楠，马怡飞，魏利祥，安佳琪',
+                offset: { x: 0, y: -32 }
+            });
+            infoWindow.open(map, shuju[25].lonlat)
+        })
+        marker20.on('click', function () {
+            // 显示自定义信息
+            var infoWindow = new AMap.InfoWindow({
+                content: '石振邦，李晨昊',
+                offset: { x: 0, y: -32 }
+            });
+            infoWindow.open(map, shuju[19].lonlat)
+        })
+        marker23.on('click', function () {
+            // 显示自定义信息
+            var infoWindow = new AMap.InfoWindow({
+                content: '薛海营，黄博文',
+                offset: { x: 0, y: -32 }
+            });
+            infoWindow.open(map, shuju[22].lonlat)
+        })
+        marker8.on('click', function () {
+            // 显示自定义信息
+            var infoWindow = new AMap.InfoWindow({
+                content: '库佑卓，王志瑶',
+                offset: { x: 0, y: -32 }
+            });
+            infoWindow.open(map, shuju[7].lonlat)
+        })
+        marker24.on('click', function () {
+            // 显示自定义信息
+            var infoWindow = new AMap.InfoWindow({
+                content: '王靖，温迪雅，胡玉初，张帆，张广镇，高源',
+                offset: { x: 0, y: -32 }
+            });
+            infoWindow.open(map, shuju[23].lonlat);
+        })
+        for (var m = 0; m < markerlist.length; m++) {
+            markerlist[m].on('click', function () {
+                AMap.plugin("AMap.Driving", function () {
+                    var driving = new AMap.Driving({
+                        policy: 0, //驾车路线规划策略，0是速度优先的策略
+                    });
+                    var startLngLat = [113.617006, 34.748067]; //起始点坐标
+                    var endLngLat = shuju[m].lonlat; //终点坐标
+                    driving.search(startLngLat, endLngLat, function (status, result) {
+                        //status：complete 表示查询成功，no_data 为查询无结果，error 代表查询错误
+                        //查询成功时，result 即为对应的驾车导航信息
+                        if (status === 'complete') {
+                            log.success('绘制驾车路线完成')
+                            map.setCenter([113.617006, 34.748067])
+                        } else {
+                            log.error('获取驾车数据失败：' + result)
+                        }
+                    });
+                });
+            })
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
+</body>
+
+</html>
